@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Sudoku Solver</h1>
+    
+    <!-- Sudoku Grid -->
+    <div class="sudoku-grid">
+      <table>
+        <tbody>
+          <!-- Generate a 9x9 grid for Sudoku -->
+          <script>
+            for (let i = 0; i < 9; i++) {
+              document.write('<tr>');
+              for (let j = 0; j < 9; j++) {
+                document.write(`
+                  <td>
+                    <input type="text" id="cell-${i}-${j}" maxlength="1" />
+                  </td>
+                `);
+              }
+              document.write('</tr>');
+            }
+          </script>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Controls for solving, resetting, and theme toggle -->
+    <div class="controls">
+      <button onclick="solveSudoku()">Solve</button>
+      <button onclick="resetBoard()">Reset</button>
+      <button id="theme-toggle">Toggle Theme</button>
+    </div>
+    
+    <p id="message"></p> <!-- Message area for success or error notifications -->
+
+  </div>
+
+  <script src="script.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
